@@ -1,30 +1,40 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <el-container id="app">
+    <el-header class="app-header">这里是标题</el-header>
+    <el-main class="app-main">
+      <el-container class="app-main-container">
+        <el-aside width="200px"><v-header></v-header></el-aside>
+        <router-view></router-view>
+      </el-container>
+    </el-main>
+    <el-footer class="app-footer">这里是底栏</el-footer>
+  </el-container>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import VHeader from '@/components/header/index.vue'
+
+export default {
+  components: {
+    VHeader,
+  },
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+</script>
+
+<style lang="scss" scoped>
+.app-header,
+.app-footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+.app-main {
+  height: 100%;
+  .app-main-container {
+    height: inherit;
   }
+}
+.el-main.app-main {
+  padding: 0px;
 }
 </style>
