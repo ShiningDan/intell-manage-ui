@@ -11,6 +11,9 @@
     "commit": "git cz"
   },
   "dependencies": {
+    "babel-plugin-component": "^1.1.1",
+    "element-ui": "^2.4.11",
+    "sanitize.css": "^8.0.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },
